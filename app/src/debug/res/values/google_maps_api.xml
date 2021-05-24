@@ -1,0 +1,26 @@
+<resources>
+    <!--
+    TODO: Before you run your application, you need a Google Maps API key.
+
+    To get one, follow this link, follow the directions and press "Create" at the end:
+
+
+    //essa url é usada para ativar caso não queira usar uma atual para poder usar a API GoogleMap
+    https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend&keyType=CLIENT_SIDE_ANDROID&r=B3:A9:06:83:5A:CC:73:B8:19:F2:EE:2C:2E:0E:F5:52:4A:15:84:3E%3Bcom.diegolima.elocations
+
+    You can also add your credentials to an existing key, using these values:
+
+    Package name:
+    com.diegolima.elocations
+
+    SHA-1 certificate fingerprint:
+    B3:A9:06:83:5A:CC:73:B8:19:F2:EE:2C:2E:0E:F5:52:4A:15:84:3E
+
+    Alternatively, follow the directions here:
+    https://developers.google.com/maps/documentation/android/start#get-key
+
+    Once you have your key (it starts with "AIza"), replace the "google_maps_key"
+    string in this file.
+    -->
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyD0MxWnfgTUNm9LyG3msy1YLK1YJs9xqiw</string>
+</resources>

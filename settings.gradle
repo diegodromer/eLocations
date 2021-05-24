@@ -1,0 +1,2 @@
+rootProject.name = "eLocations"
+include ':app'
