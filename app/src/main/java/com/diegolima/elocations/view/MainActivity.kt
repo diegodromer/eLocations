@@ -81,7 +81,6 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
 
         fbCadastrarEstabelecimento.setOnClickListener(this)
 
-
         val buttonViewEstabelecimentos: Button = findViewById(R.id.button_view_estabelecimentos)
         buttonViewEstabelecimentos.setOnClickListener(this)
     }

@@ -24,21 +24,21 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="54dp"
         android:layout_marginTop="12dp"
+        android:layout_marginBottom="@dimen/margin_16dp"
         android:fontFamily="sans-serif-black"
         android:text="eLocations"
         android:textColor="@color/materialThemeBar"
-
         android:textSize="28sp"
-
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_all_guests"
-        android:layout_marginTop="70dp"
+    <include
+        android:id="@+id/include_recycler_dados"
+        layout="@layout/fragment_todos"
         android:layout_width="0dp"
-        android:layout_height="match_parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nameApp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
