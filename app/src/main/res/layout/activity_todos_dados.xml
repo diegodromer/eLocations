@@ -9,7 +9,7 @@
     tools:context=".view.DadosFormActivity">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toobarDados"
+        android:id="@+id/toobarTodosDados"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@color/backTheme"

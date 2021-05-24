@@ -26,7 +26,7 @@ class ImagensFormActivity : AppCompatActivity(), View.OnClickListener {
         toobarImagens.setNavigationIcon(getDrawable(drawable.ic_arrow))
 
         toobarImagens.setNavigationOnClickListener {
-            startActivity(Intent(this, MainActivity::class.java))
+            startActivity(Intent(this, DadosFormActivity::class.java))
             finish()
         }
 
@@ -54,19 +54,19 @@ class ImagensFormActivity : AppCompatActivity(), View.OnClickListener {
 //            foto_estabelecimento.setImageBitmap(imageBitmap)
 //        }
         //metodo buscar foto na galeria
-        if(requestCode == 0){
+        if (requestCode == 0) {
             SelecionarUri = data?.data
 
             val bitmap = MediaStore.Images.Media.getBitmap(contentResolver, SelecionarUri)
 
-            if(bitmap != null) {
+            if (bitmap != null) {
                 foto_ex1.setImageBitmap(bitmap)
             }
         }
     }
 
     private fun SelecionarFotoDaGaleria() {
-      val intent = Intent(Intent.ACTION_PICK)
+        val intent = Intent(Intent.ACTION_PICK)
         intent.type = "image/*"
         startActivityForResult(intent, 0)
     }
@@ -85,11 +85,11 @@ class ImagensFormActivity : AppCompatActivity(), View.OnClickListener {
 
                 SelecionarFotoDaGaleria()
 
-            /*val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-                startActivityForResult(intent, REQUEST_IMAGE_CAPTURE)*/
+                /*val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+                    startActivityForResult(intent, REQUEST_IMAGE_CAPTURE)*/
 
             }
-            R.id.button_delete_image1 ->{
+            R.id.button_delete_image1 -> {
                 foto_ex1.setImageResource(R.drawable.ic_map)
             }
         }

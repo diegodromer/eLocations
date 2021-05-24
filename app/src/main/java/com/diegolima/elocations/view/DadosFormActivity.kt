@@ -25,8 +25,8 @@ class DadosFormActivity : AppCompatActivity(), View.OnClickListener {
         setContentView(R.layout.activity_dados_form)
 
         supportActionBar!!.hide()
-        toobarDados.setNavigationIcon(getDrawable(R.drawable.ic_arrow))
-        toobarDados.setNavigationOnClickListener {
+        toobarDadosForm.setNavigationIcon(getDrawable(R.drawable.ic_arrow))
+        toobarDadosForm.setNavigationOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
             finish()
         }
@@ -49,7 +49,7 @@ class DadosFormActivity : AppCompatActivity(), View.OnClickListener {
             }
             R.id.button_imagens -> {
                 startActivity(Intent(this, ImagensFormActivity::class.java))
-                finish()
+                //finish()
                 //TODO: a questao aqui é se automatiza os dados apos setar a/as imagem/ns
                 //TODO: se o contexto vai estar ativo ou se vai ter q passar (pq creio que vai perder a referencia atual,
                 //TODO: a nao ser q use uma instancia unica)
