@@ -55,12 +55,16 @@ class ImagensFormActivity : AppCompatActivity(), View.OnClickListener {
 //        }
         //metodo buscar foto na galeria
         if (requestCode == 0) {
-            SelecionarUri = data?.data
+            try {
+                SelecionarUri = data?.data
 
-            val bitmap = MediaStore.Images.Media.getBitmap(contentResolver, SelecionarUri)
+                val bitmap = MediaStore.Images.Media.getBitmap(contentResolver, SelecionarUri)
 
-            if (bitmap != null) {
-                foto_ex1.setImageBitmap(bitmap)
+                if (bitmap != null) {
+                    foto_ex1.setImageBitmap(bitmap)
+                }
+            }catch (e:Exception){
+                Toast.makeText(this, "A imagem não foi selecionada", Toast.LENGTH_SHORT).show()
             }
         }
     }
