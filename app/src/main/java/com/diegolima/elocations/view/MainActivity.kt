@@ -3,6 +3,7 @@ package com.diegolima.elocations.view
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.diegolima.elocations.R
@@ -12,6 +13,7 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.*
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import kotlinx.android.synthetic.main.activity_main.*
 
 //FragmentActivity()
 class MainActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarkerClickListener,
@@ -23,11 +25,11 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
     //TODO: criar activity de visualização dos cadastro com edição
     //TODO: criar activity de cadastro gerando e salvando o local atual (Double)
     //TODO: (perguntar da necessidade dessa implentação, remover ou mudar, buscando se for o caso direto do marker (talvez menos interessante))
-            //TODO: implementar o slide de visualização das infos de cada pin com botao pra edicao, chamando formulario {activity_dados_form}?
-                    //TODO: e remover botao de visualizacao dos cadastros
+    //TODO: implementar o slide de visualização das infos de cada pin com botao pra edicao, chamando formulario {activity_dados_form}?
+    //TODO: e remover botao de visualizacao dos cadastros
     //TODO: implementar layout único para cadastro dos dados e imagens e remover as duas activities -> dando menos trabalho na manutencao
     //TODO: criar recyclerview para carregamento de fotos inicial da galeria e depois mudar para carregamento da camera /ou galeria
-            //TODO: e remover layout de captura de teste
+    //TODO: e remover layout de captura de teste
     //TODO: implementar a edição de cada estabelecimento selecionado a partir do slide à ser implementado {layout_info}
 
 
@@ -78,13 +80,27 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
             findViewById(R.id.fb_add_estabelecimentos)
 
         fbCadastrarEstabelecimento.setOnClickListener(this)
+
+
+        val buttonViewEstabelecimentos: Button = findViewById(R.id.button_view_estabelecimentos)
+        buttonViewEstabelecimentos.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
-        intent = Intent(this, DadosFormActivity::class.java)
-        startActivity(intent)
+
+        when (v?.id) {
+            R.id.fb_add_estabelecimentos -> {
+                intent = Intent(this, DadosFormActivity::class.java)
+                startActivity(intent)
+            }
+            R.id.button_view_estabelecimentos -> {
+                intent = Intent(this, TodosDadosActivity::class.java)
+                startActivity(intent)
+            }
+        }
 
 
+        button_view_estabelecimentos
 
         /*val activityOptionsCompat = ActivityOptions.makeCustomAnimation(this, R.anim.fade_in, R.anim.mover_direita).toBundle()
         ActivityCompat.startActivity(this, intent, activityOptionsCompat.toBundle())*/
