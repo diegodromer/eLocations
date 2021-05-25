@@ -17,10 +17,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ELocations">
-        <activity android:name=".view.TodosDadosActivity"></activity>
-        <activity android:name=".Fragments.AdicionarFoto" />
-        <activity android:name=".view.ImagensFormActivity" />
-        <activity android:name=".view.DadosFormActivity" />
+        <activity android:name=".view.AllDadosActivity"></activity>
+        <activity android:name=".view.form.ImagensFormActivity" />
+        <activity android:name=".view.form.DadosFormActivity" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"

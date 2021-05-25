@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.diegolima.elocations.R
+import com.diegolima.elocations.view.form.DadosFormActivity
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -93,8 +94,9 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
                 startActivity(intent)
             }
             R.id.button_view_estabelecimentos -> {
-                intent = Intent(this, TodosDadosActivity::class.java)
+                intent = Intent(this, AllDadosActivity::class.java)
                 startActivity(intent)
+                //finish()
             }
         }
 

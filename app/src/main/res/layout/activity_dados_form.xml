@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/fundoActivitys"
     android:screenOrientation="portrait"
-    tools:context=".view.DadosFormActivity">
+    tools:context=".view.form.DadosFormActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toobarDadosForm"
@@ -110,6 +110,32 @@
         app:layout_constraintTop_toBottomOf="@+id/edit_name"
         app:layout_constraintVertical_bias="0.0" />
 
+    <Button
+        android:id="@+id/HintTestMockToAdapter"
+        android:layout_width="200dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="56dp"
+        android:background="@drawable/shape_mock"
+        android:hint="Tipos de Estabelecimentos"
+        android:textSize="16sp"
+        android:clickable="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_description" />
+
+    <Button
+        android:id="@+id/testMockToAdapter"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="@dimen/margin_32dp"
+        android:background="@drawable/ic_play_snack_info"
+        android:clickable="false"
+        android:paddingStart="@dimen/margin_8dp"
+        android:paddingEnd="@dimen/margin_8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_description" />
+
     <Spinner
         android:id="@+id/spinner_dinamic"
         android:layout_width="match_parent"
@@ -117,7 +143,7 @@
         android:layout_marginStart="@dimen/margin_16dp"
         android:layout_marginTop="@dimen/margin_16dp"
         android:layout_marginEnd="@dimen/margin_16dp"
-        android:background="@drawable/shape_edit_text"
+        android:background="@drawable/shape_spinner"
         android:paddingStart="@dimen/margin_8dp"
         android:paddingEnd="@dimen/margin_8dp"
         app:layout_constraintEnd_toEndOf="parent"

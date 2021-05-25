@@ -12,7 +12,7 @@
     <string name="hint_floor_number">Andar</string>
     <string name="save_address">Salvar endereço</string>
 
-    <string name="hint_door_number">Número do apartamento</string>
     <string name="title">Título</string>
     <string name="description">Descrição</string>
+    <string name="todos">Todos</string>
 </resources>

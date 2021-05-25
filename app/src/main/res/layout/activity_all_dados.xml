@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:screenOrientation="portrait"
+    android:background="@color/fundoActivitys"
+    tools:context=".view.AllDadosActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toobarAllDados"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/backTheme"
+        android:minHeight="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/nameApp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="54dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="131dp"
+        android:fontFamily="sans-serif-black"
+        android:text="eLocations"
+        android:textColor="@color/materialThemeBar"
+        android:textSize="28sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <fragment
+        android:id="@+id/nav_all"
+        android:name="com.diegolima.elocations.view.AllDadosFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="58dp"
+        android:label="Todos os Dados"
+        app:layout_constraintTop_toBottomOf="@id/toobarAllDados"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout="@layout/fragment_all">
+
+
+    </fragment>
+</androidx.constraintlayout.widget.ConstraintLayout>
