@@ -15,9 +15,22 @@ class DadosFormViewModel(application: Application) : AndroidViewModel(applicatio
     private var mSaveDados = MutableLiveData<Boolean>()
     val saveDados: LiveData<Boolean> = mSaveDados
 
+    private var mDados = MutableLiveData<DadosModel>()
+    val dados: LiveData<DadosModel> = mDados
+
     //TODO: falta implementar tipo de estabelecimento e localização do estabelecimento
-    fun save(name: String, description: String) {
-        val dados = DadosModel(name = name, description = description)
-        mSaveDados.value = mDadosRepository.save(dados)
+    fun save(id: Int, name: String, description: String) {
+        val dados = DadosModel(id, name, description)
+
+        if (id == 0) {
+            mSaveDados.value = mDadosRepository.save(dados)
+        } else {
+            mSaveDados.value = mDadosRepository.update(dados)
+        }
+
+    }
+
+    fun load(id: Int) {
+        mDados.value = mDadosRepository.get(id)
     }
 }

@@ -117,41 +117,43 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
 
         //protótico
         //Burger King (BK)
-        markerBurgerKing = map.addMarker(
+        map.addMarker(
             MarkerOptions()
                 .position(burgerKing)
                 .title("Burger King (BK)")
                 .snippet("{Images - Description - Categories - Directions}")
-        )
+        ).also { markerBurgerKing = it }
         markerBurgerKing.tag = 0
 
 
         //Maksoud Plaza Hotel
-        markerMaksoudPlazaHotel = map.addMarker(
+        map.addMarker(
             MarkerOptions()
                 .position(maksoudPlazaHotel)
                 .title("Maksoud Plaza Hotel")
                 .snippet("{Images - Description - Categories - Directions}")
-        )
+        ).also { markerMaksoudPlazaHotel = it }
         markerMaksoudPlazaHotel.tag = 0
 
         //Pão de Açúcar
-        markerPaoDeAcucar = map.addMarker(
+        map.addMarker(
             MarkerOptions()
                 .position(paoDeAcucar)
                 .title("Pão de Açúcar")
                 .snippet("{Images - Description - Categories - Directions}")
-        )
+        ).also { markerPaoDeAcucar = it }
         markerPaoDeAcucar.tag = 0
 
         //Lojas Renner
-        markerLojasRenner = map.addMarker(
+        map.addMarker(
             MarkerOptions()
                 .position(lojasRenner)
                 .title("Lojas Renner")
                 .snippet("{Images - Description - Categories - Directions}")
-        )
+        ).also { markerLojasRenner = it }
         markerLojasRenner.tag = 0
+
+        //o also, referencia tudo dentro laço e atribui ao marcador de uma forma mais estrutural
 
         //Universidade Cruzeiro do Sul
         markerUniversidadeCruzeiroDoSul = map.addMarker(
@@ -184,7 +186,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
 
         Toast.makeText(
             this,
-            "${marker.title}",
+            marker.title,
             Toast.LENGTH_SHORT
         ).show()
 

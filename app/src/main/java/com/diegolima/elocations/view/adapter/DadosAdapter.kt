@@ -5,18 +5,20 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import com.diegolima.elocations.R
 import com.diegolima.elocations.service.model.DadosModel
+import com.diegolima.elocations.view.listener.DadosListener
 import com.diegolima.elocations.view.viewholder.DadosViewHolder
 
 class DadosAdapter() : Adapter<DadosViewHolder>() {
 
     private var mDadosList:List<DadosModel> = arrayListOf()
+    private lateinit var mListener: DadosListener
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DadosViewHolder {
 
         //modelo de estrutura de dados
         val item = LayoutInflater.from(parent.context).inflate(R.layout.row_estabelecimento, parent, false)
 
-        return DadosViewHolder(item)
+        return DadosViewHolder(item, mListener)
     }
 
     override fun getItemCount(): Int {
@@ -32,4 +34,7 @@ class DadosAdapter() : Adapter<DadosViewHolder>() {
         notifyDataSetChanged()
     }
 
+    fun attachListener(listener: DadosListener){
+        mListener = listener
+    }
 }

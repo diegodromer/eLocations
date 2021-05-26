@@ -30,21 +30,14 @@ class ImagensFormActivity : AppCompatActivity(), View.OnClickListener {
             finish()
         }
 
-        val buttonDados: Button = findViewById(R.id.button_dados)
-        buttonDados.setOnClickListener(this)
+        setListeners()
+    }
 
-        val buttonImagens: Button = findViewById(R.id.button_imagens)
-        buttonImagens.setOnClickListener(this)
-
-        val fbAddFotos: FloatingActionButton = findViewById(R.id.fb_add_fotos)
-        fbAddFotos.setOnClickListener(this)
-
-        val buttonDeleteImage1: Button = findViewById(R.id.button_delete_image1)
-        buttonDeleteImage1.setOnClickListener(this)
-
-/*        val foto_estabelecimentoImage: ImageView = findViewById(R.id.foto_estabelecimento)
-        foto_estabelecimentoImage.setOnClickListener(this)*/
-
+    private fun setListeners() {
+        button_dados.setOnClickListener(this)
+        button_imagens.setOnClickListener(this)
+        fb_add_fotos.setOnClickListener(this)
+        button_delete_image1.setOnClickListener(this)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

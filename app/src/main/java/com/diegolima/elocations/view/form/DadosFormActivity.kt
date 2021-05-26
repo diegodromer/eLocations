@@ -10,13 +10,14 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.diegolima.elocations.viewmodel.DadosFormViewModel
 import com.diegolima.elocations.R
+import com.diegolima.elocations.service.constants.DadosConstants
 import com.diegolima.elocations.view.MainActivity
 import kotlinx.android.synthetic.main.activity_dados_form.*
 
 class DadosFormActivity : AppCompatActivity(), View.OnClickListener {
 
-    private lateinit var mFormViewModel: DadosFormViewModel
-    private var mGuestId: Int = 0
+    private lateinit var mViewModel: DadosFormViewModel
+    private var mDadosId: Int = 0
 
     //localizacao atual
     private val localAtual: Double = 00.00000
@@ -32,10 +33,11 @@ class DadosFormActivity : AppCompatActivity(), View.OnClickListener {
             finish()
         }
 
-        mFormViewModel = ViewModelProvider(this).get(DadosFormViewModel::class.java)
+        mViewModel = ViewModelProvider(this).get(DadosFormViewModel::class.java)
 
         setListeners()
         observe()
+        loadData()
         loadSpinner()
     }
 
@@ -68,7 +70,7 @@ class DadosFormActivity : AppCompatActivity(), View.OnClickListener {
                 val name = edit_name.text.toString()
                 val description = edit_description.text.toString()
 
-                mFormViewModel.save(name, description)
+                mViewModel.save(mDadosId, name, description)
 
             }
             R.id.button_delete_establishment -> {
@@ -78,8 +80,17 @@ class DadosFormActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
+    private fun loadData() {
+        val bundle = intent.extras
+        if (bundle != null) {
+            mDadosId = bundle.getInt(DadosConstants.DADOSID)
+            //carregar
+            mViewModel.load(mDadosId)
+        }
+    }
+
     private fun observe() {
-        mFormViewModel.saveDados.observe(this, Observer {
+        mViewModel.saveDados.observe(this, Observer {
             if (it) {
                 //Toast.makeText(applicationContext, "Sucesso", Toast.LENGTH_SHORT).show()
                 Toast.makeText(this, "Estabelecimento Salvo com sucesso!", Toast.LENGTH_LONG).show()
@@ -87,6 +98,10 @@ class DadosFormActivity : AppCompatActivity(), View.OnClickListener {
                 Toast.makeText(applicationContext, "Falha", Toast.LENGTH_SHORT).show()
             }
             finish()
+        })
+        mViewModel.dados.observe(this, Observer {
+            edit_name.setText(it.name)
+            edit_description.setText(it.description)
         })
     }
 

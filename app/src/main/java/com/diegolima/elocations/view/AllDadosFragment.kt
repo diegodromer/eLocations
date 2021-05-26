@@ -1,5 +1,6 @@
 package com.diegolima.elocations.view
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,7 +11,10 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.diegolima.elocations.R
+import com.diegolima.elocations.service.constants.DadosConstants
 import com.diegolima.elocations.view.adapter.DadosAdapter
+import com.diegolima.elocations.view.form.DadosFormActivity
+import com.diegolima.elocations.view.listener.DadosListener
 import com.diegolima.elocations.viewmodel.DadosFormViewModel
 import com.diegolima.elocations.viewmodel.DadosViewModel
 
@@ -18,6 +22,7 @@ class AllDadosFragment : Fragment() {
 
     private lateinit var mViewModel: DadosViewModel
     private val mAdapter: DadosAdapter = DadosAdapter()
+    private lateinit var mListener: DadosListener
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, s: Bundle?): View? {
         mViewModel = ViewModelProvider(this).get(DadosViewModel::class.java)
@@ -33,6 +38,21 @@ class AllDadosFragment : Fragment() {
         recycler.layoutManager = LinearLayoutManager(context)
         //3
         recycler.adapter = mAdapter
+
+        mListener = object : DadosListener {
+            override fun onClick(id: Int) {
+                val intent = Intent(context, DadosFormActivity::class.java)
+
+                val bundle = Bundle()
+                bundle.putInt(DadosConstants.DADOSID, id)
+
+                intent.putExtras(bundle)
+
+                startActivity(intent)
+            }
+        }
+
+        mAdapter.attachListener(mListener)
 
         observer()
 
