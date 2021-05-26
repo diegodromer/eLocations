@@ -27,9 +27,7 @@
         android:fontFamily="sans-serif-black"
         android:text="eLocations"
         android:textColor="@color/materialThemeBar"
-
         android:textSize="28sp"
-
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
