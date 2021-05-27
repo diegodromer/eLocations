@@ -2,7 +2,7 @@
 
 Tela - Inicial 
 
-![telaInicial](https://user-images.githubusercontent.com/24457337/119761557-61287780-be82-11eb-8b75-6574f62acc76.png)
+![telaInicial](https://user-images.githubusercontent.com/24457337/119762032-54585380-be83-11eb-8b91-b36995bad472.png)
 
 Tela - Formulário de Dados do estabelecimento
 
