@@ -15,4 +15,10 @@
     <string name="title">Título</string>
     <string name="description">Descrição</string>
     <string name="todos">Todos</string>
+
+    <string name="remocao_estabelecimento">Remoção de Estabelecimento</string>
+    <string name="deseja_remover">Deseja remover Estabelecimento da lista?</string>
+    <string name="remover">Remover</string>
+    <string name="removido_com_sucesso">Estabelecimento removido com sucesso.</string>
+    <string name="cancelar">Cancelar</string>
 </resources>

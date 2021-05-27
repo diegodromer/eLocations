@@ -27,6 +27,7 @@ class DadosRepository private constructor(context: Context) {
         }
     }
 
+    // a get ja faz o papel de get individual e vai fazer de dados para o padrao do mockup
     fun get(id: Int): DadosModel? {
         var dados: DadosModel? = null
         return try {
@@ -109,6 +110,11 @@ class DadosRepository private constructor(context: Context) {
         } catch (e: Exception) {
             list
         }
+    }
+
+    fun getImagens():  List<DadosModel> {
+        val list: MutableList<DadosModel> = ArrayList()
+        return list
     }
 
     //CRUD

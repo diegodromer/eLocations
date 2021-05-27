@@ -199,6 +199,21 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <!--<com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginBottom="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_alignParentBottom="true"
+        style="@style/Widget.MaterialComponents.BottomNavigationView"
+        app:itemBackground="@drawable/ic_add"
+        app:itemIconTint="@color/bt"
+        app:itemTextColor="@color/white"/>-->
+
+
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fb_add_fotos"

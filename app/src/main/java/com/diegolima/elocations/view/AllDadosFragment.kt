@@ -15,7 +15,6 @@ import com.diegolima.elocations.service.constants.DadosConstants
 import com.diegolima.elocations.view.adapter.DadosAdapter
 import com.diegolima.elocations.view.form.DadosFormActivity
 import com.diegolima.elocations.view.listener.DadosListener
-import com.diegolima.elocations.viewmodel.DadosFormViewModel
 import com.diegolima.elocations.viewmodel.DadosViewModel
 
 class AllDadosFragment : Fragment() {
@@ -24,12 +23,14 @@ class AllDadosFragment : Fragment() {
     private val mAdapter: DadosAdapter = DadosAdapter()
     private lateinit var mListener: DadosListener
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, s: Bundle?): View? {
-        mViewModel = ViewModelProvider(this).get(DadosViewModel::class.java)
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        ViewModelProvider(this).get(DadosViewModel::class.java).also { mViewModel = it }
 
         val root = inflater.inflate(R.layout.fragment_all, container, false)
-
-
 
         //RecyclerView
         //1
@@ -40,6 +41,7 @@ class AllDadosFragment : Fragment() {
         recycler.adapter = mAdapter
 
         mListener = object : DadosListener {
+
             override fun onClick(id: Int) {
                 val intent = Intent(context, DadosFormActivity::class.java)
 
@@ -50,15 +52,23 @@ class AllDadosFragment : Fragment() {
 
                 startActivity(intent)
             }
+
+            override fun onDelete(id: Int) {
+                mViewModel.delete(id)
+                mViewModel.load(DadosConstants.FILTER.EMPTY)
+            }
         }
 
         mAdapter.attachListener(mListener)
 
         observer()
 
-        mViewModel.load()
-
         return root
+    }
+
+    override fun onResume() {
+        super.onResume()
+        mViewModel.load(DadosConstants.FILTER.EMPTY)
     }
 
     private fun observer() {
