@@ -42,13 +42,12 @@
     <fragment
         android:id="@+id/fragmentMap"
         android:name="com.google.android.gms.maps.SupportMapFragment"
-        android:layout_width="374dp"
+        android:layout_width="410dp"
         android:layout_height="630dp"
         android:layout_marginStart="@dimen/margin_16dp"
         android:layout_marginTop="@dimen/margin_16dp"
         android:layout_marginEnd="@dimen/margin_16dp"
         android:layout_marginBottom="6dp"
-
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -59,7 +58,7 @@
         android:id="@+id/fb_add_estabelecimentos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/margin_32dp"
+        android:layout_marginEnd="@dimen/margin_16dp"
         android:layout_marginBottom="@dimen/margin_16dp"
         android:backgroundTint="@color/bt"
         android:src="@drawable/ic_add"
