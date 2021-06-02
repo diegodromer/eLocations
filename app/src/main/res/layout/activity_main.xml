@@ -8,26 +8,38 @@
     android:screenOrientation="portrait"
     tools:context=".view.MainActivity">
 
-    <TextView
-        android:id="@+id/nameApp"
-        android:layout_width="wrap_content"
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolBarPrincipal"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin_16dp"
-        android:layout_marginTop="@dimen/margin_16dp"
-        android:fontFamily="sans-serif-black"
-        android:text="eLocations"
-        android:textColor="@color/materialThemeBar"
-        android:textSize="28sp"
+        android:background="?attr/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_scrollFlags="scroll|enterAlways"
+        app:popupTheme="@style/Theme.AppCompat.Light"
+        app:titleTextColor="#ffffff" />
+
+
+    <!--    <TextView
+            android:id="@+id/nameApp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_16dp"
+            android:layout_marginTop="@dimen/margin_16dp"
+            android:fontFamily="sans-serif-black"
+            android:text="eLocations"
+            android:textColor="@color/materialThemeBar"
+            android:textSize="28sp"
+            app:layout_constraintTop_toBottomOf="@id/toolBarPrincipal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />-->
 
     <Button
         android:id="@+id/button_view_estabelecimentos"
         android:layout_width="200dp"
         android:layout_height="40dp"
-        android:layout_marginTop="@dimen/margin_12dp"
-        android:layout_marginEnd="@dimen/margin_16dp"
-        android:layout_marginBottom="@dimen/margin_8dp"
         android:background="@drawable/shape_edit_text"
         android:drawableLeft="@drawable/ic_list_bulleted"
         android:fontFamily="sans-serif-black"
@@ -36,20 +48,32 @@
         android:text="Estabelecimentos"
         android:textColor="@color/bt"
         android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/fragmentMap"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolBarPrincipal" />
 
     <fragment
         android:id="@+id/fragmentMap"
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="@dimen/margin_16dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/button_view_estabelecimentos" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fb_form"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="@dimen/margin_16dp"
+        android:backgroundTint="@color/white"
+        android:src="@drawable/ic_add_black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fb_add_estabelecimentos"
@@ -69,12 +93,14 @@
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
         <include
             android:id="@+id/layoutAddressCollapsed"
-            layout="@layout/fragment_slide_estabelecimento" />
+            layout="@layout/fragment_estabelecimento" />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

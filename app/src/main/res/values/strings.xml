@@ -21,4 +21,7 @@
     <string name="remover">Remover</string>
     <string name="removido_com_sucesso">Estabelecimento removido com sucesso.</string>
     <string name="cancelar">Cancelar</string>
+
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
 </resources>

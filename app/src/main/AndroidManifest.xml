@@ -17,7 +17,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ELocations">
-        <activity android:name=".view.AllDadosActivity"></activity>
+        <activity android:name=".view.form.FormActivity"></activity>
+        <activity android:name=".view.AllDadosActivity" />
         <activity android:name=".view.form.ImagensFormActivity" />
         <activity android:name=".view.form.DadosFormActivity" />
 

@@ -10,16 +10,18 @@
     tools:context=".view.AllDadosActivity">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toobarAllDados"
-        android:layout_width="0dp"
+        android:id="@+id/toolBarAllDados"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/backTheme"
-        android:minHeight="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_scrollFlags="scroll|enterAlways"
+        app:popupTheme="@style/Theme.AppCompat.Light"
+        app:titleTextColor="#ffffff" />
 
-    <TextView
+<!--    <TextView
         android:id="@+id/nameApp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -31,7 +33,7 @@
         android:textColor="@color/materialThemeBar"
         android:textSize="28sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" />-->
 
     <fragment
         android:id="@+id/nav_all"
@@ -40,7 +42,7 @@
         android:layout_height="match_parent"
         android:layout_marginTop="58dp"
         android:label="Todos os Dados"
-        app:layout_constraintTop_toBottomOf="@id/toobarAllDados"
+        app:layout_constraintTop_toBottomOf="@id/toolBarAllDados"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout="@layout/fragment_all">

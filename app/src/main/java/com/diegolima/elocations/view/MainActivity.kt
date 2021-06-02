@@ -8,12 +8,14 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.diegolima.elocations.R
 import com.diegolima.elocations.view.form.DadosFormActivity
+import com.diegolima.elocations.view.form.FormActivity
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.*
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import kotlinx.android.synthetic.main.activity_form.*
 import kotlinx.android.synthetic.main.activity_main.*
 
 //FragmentActivity()
@@ -71,19 +73,21 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        supportActionBar!!.hide()
+        toolBarPrincipal.setTitle("eLocations")
+        setSupportActionBar(toolBarPrincipal)
 
         val mapFragment =
             supportFragmentManager.findFragmentById(R.id.fragmentMap) as SupportMapFragment?
         mapFragment!!.getMapAsync(this)
 
-        val fbCadastrarEstabelecimento: FloatingActionButton =
-            findViewById(R.id.fb_add_estabelecimentos)
+        listeners()
 
-        fbCadastrarEstabelecimento.setOnClickListener(this)
+    }
 
-        val buttonViewEstabelecimentos: Button = findViewById(R.id.button_view_estabelecimentos)
-        buttonViewEstabelecimentos.setOnClickListener(this)
+    private fun listeners() {
+        fb_add_estabelecimentos.setOnClickListener(this)
+        button_view_estabelecimentos.setOnClickListener(this)
+        fb_form.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -95,6 +99,11 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
             }
             R.id.button_view_estabelecimentos -> {
                 intent = Intent(this, AllDadosActivity::class.java)
+                startActivity(intent)
+                //finish()
+            }
+            R.id.fb_form -> {
+                intent = Intent(this, FormActivity::class.java)
                 startActivity(intent)
                 //finish()
             }

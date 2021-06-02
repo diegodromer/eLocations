@@ -11,7 +11,10 @@ import android.widget.Toast
 import com.diegolima.elocations.R
 import com.diegolima.elocations.R.drawable
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import kotlinx.android.synthetic.main.activity_dados_form.*
 import kotlinx.android.synthetic.main.activity_imagens_form.*
+import kotlinx.android.synthetic.main.activity_imagens_form.button_dados
+import kotlinx.android.synthetic.main.activity_imagens_form.button_imagens
 
 class ImagensFormActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -22,13 +25,15 @@ class ImagensFormActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_imagens_form)
 
-        supportActionBar!!.hide()
-        toobarImagens.setNavigationIcon(getDrawable(drawable.ic_arrow))
+        toobarImagensForm.setTitle("eLocations")
+        setSupportActionBar(toobarImagensForm)
 
-        toobarImagens.setNavigationOnClickListener {
+/*        toobarImagensForm.setNavigationIcon(getDrawable(drawable.ic_arrow))
+
+        toobarImagensForm.setNavigationOnClickListener {
             startActivity(Intent(this, DadosFormActivity::class.java))
             finish()
-        }
+        }*/
 
         setListeners()
     }

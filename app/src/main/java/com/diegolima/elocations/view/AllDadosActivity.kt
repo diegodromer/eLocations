@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.diegolima.elocations.R
 import kotlinx.android.synthetic.main.activity_all_dados.*
+import kotlinx.android.synthetic.main.activity_main.*
 
 class AllDadosActivity : AppCompatActivity() {
 
@@ -12,13 +13,14 @@ class AllDadosActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_all_dados)
 
-        supportActionBar!!.hide()
+        toolBarAllDados.setTitle("eLocations")
+        setSupportActionBar(toolBarAllDados)
 
-        toobarAllDados.setNavigationIcon(getDrawable(R.drawable.ic_arrow))
+/*        toolBarAllDados.setNavigationIcon(getDrawable(R.drawable.ic_arrow))
 
-        toobarAllDados.setNavigationOnClickListener {
+        toolBarAllDados.setNavigationOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
             finish()
-        }
+        }*/
     }
 }

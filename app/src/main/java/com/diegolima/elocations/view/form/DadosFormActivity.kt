@@ -13,6 +13,7 @@ import com.diegolima.elocations.R
 import com.diegolima.elocations.service.constants.DadosConstants
 import com.diegolima.elocations.view.MainActivity
 import kotlinx.android.synthetic.main.activity_dados_form.*
+import kotlinx.android.synthetic.main.activity_main.*
 
 class DadosFormActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -26,12 +27,14 @@ class DadosFormActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dados_form)
 
-        supportActionBar!!.hide()
-        toobarDadosForm.setNavigationIcon(getDrawable(R.drawable.ic_arrow))
+        toobarDadosForm.setTitle("eLocations")
+        setSupportActionBar(toobarDadosForm)
+
+/*        toobarDadosForm.setNavigationIcon(getDrawable(R.drawable.ic_arrow))
         toobarDadosForm.setNavigationOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
             finish()
-        }
+        }*/
 
         mViewModel = ViewModelProvider(this).get(DadosFormViewModel::class.java)
 
