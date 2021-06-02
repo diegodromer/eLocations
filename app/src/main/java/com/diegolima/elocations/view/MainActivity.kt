@@ -73,8 +73,8 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        toolBarPrincipal.setTitle("eLocations")
-        setSupportActionBar(toolBarPrincipal)
+/*        toolBarPrincipal.setTitle("eLocations")
+        setSupportActionBar(toolBarPrincipal)*/
 
         val mapFragment =
             supportFragmentManager.findFragmentById(R.id.fragmentMap) as SupportMapFragment?
@@ -100,12 +100,10 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
             R.id.button_view_estabelecimentos -> {
                 intent = Intent(this, AllDadosActivity::class.java)
                 startActivity(intent)
-                //finish()
             }
             R.id.fb_form -> {
                 intent = Intent(this, FormActivity::class.java)
                 startActivity(intent)
-                //finish()
             }
         }
 

@@ -4,54 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/backTheme"
+    android:background="@color/white"
     android:screenOrientation="portrait"
     tools:context=".view.MainActivity">
 
-
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolBarPrincipal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_scrollFlags="scroll|enterAlways"
-        app:popupTheme="@style/Theme.AppCompat.Light"
-        app:titleTextColor="#ffffff" />
-
-
-    <!--    <TextView
-            android:id="@+id/nameApp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_16dp"
-            android:layout_marginTop="@dimen/margin_16dp"
-            android:fontFamily="sans-serif-black"
-            android:text="eLocations"
-            android:textColor="@color/materialThemeBar"
-            android:textSize="28sp"
-            app:layout_constraintTop_toBottomOf="@id/toolBarPrincipal"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />-->
-
-    <Button
-        android:id="@+id/button_view_estabelecimentos"
-        android:layout_width="200dp"
-        android:layout_height="40dp"
-        android:background="@drawable/shape_edit_text"
-        android:drawableLeft="@drawable/ic_list_bulleted"
-        android:fontFamily="sans-serif-black"
-        android:paddingStart="8dp"
-        android:paddingEnd="8dp"
-        android:text="Estabelecimentos"
-        android:textColor="@color/bt"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/fragmentMap"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolBarPrincipal" />
 
     <fragment
         android:id="@+id/fragmentMap"
@@ -62,7 +18,26 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/button_view_estabelecimentos" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button_view_estabelecimentos"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="@dimen/margin_8dp"
+        android:alpha="0.8"
+        android:background="@drawable/shape_button_estabelecimentos"
+        android:drawableLeft="@drawable/ic_list_bulleted"
+        android:fontFamily="sans-serif-black"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:stateListAnimator="@null"
+        android:text="Estabelecimentos"
+        android:textColor="@color/bt"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fb_form"

@@ -16,11 +16,11 @@ class AllDadosActivity : AppCompatActivity() {
         toolBarAllDados.setTitle("eLocations")
         setSupportActionBar(toolBarAllDados)
 
-/*        toolBarAllDados.setNavigationIcon(getDrawable(R.drawable.ic_arrow))
+        toolBarAllDados.navigationIcon = getDrawable(R.drawable.ic_arrow)
 
         toolBarAllDados.setNavigationOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
             finish()
-        }*/
+        }
     }
 }

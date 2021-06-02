@@ -28,12 +28,12 @@ class ImagensFormActivity : AppCompatActivity(), View.OnClickListener {
         toobarImagensForm.setTitle("eLocations")
         setSupportActionBar(toobarImagensForm)
 
-/*        toobarImagensForm.setNavigationIcon(getDrawable(drawable.ic_arrow))
+        toobarImagensForm.navigationIcon = getDrawable(drawable.ic_arrow)
 
         toobarImagensForm.setNavigationOnClickListener {
             startActivity(Intent(this, DadosFormActivity::class.java))
             finish()
-        }*/
+        }
 
         setListeners()
     }
@@ -77,7 +77,6 @@ class ImagensFormActivity : AppCompatActivity(), View.OnClickListener {
         when (v?.id) {
             R.id.button_dados -> {
                 startActivity(Intent(this, DadosFormActivity::class.java))
-                finish()
             }
             R.id.button_imagens -> {
                 Toast.makeText(this, "Você já está na tela de Imagens", Toast.LENGTH_LONG)

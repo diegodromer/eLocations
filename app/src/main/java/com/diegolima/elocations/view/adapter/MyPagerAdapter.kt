@@ -3,8 +3,8 @@ package com.diegolima.elocations.view.adapter
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
-import com.diegolima.elocations.view.form.FragmentOne
-import com.diegolima.elocations.view.form.FragmentTwo
+import com.diegolima.elocations.view.form.FragmentDados
+import com.diegolima.elocations.view.form.FragmentImagens
 
 class MyPagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
 
@@ -13,10 +13,10 @@ class MyPagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
         return when (position) {
             //estes metodos sao setados nas tabs
             0 -> {
-                FragmentOne()
+                FragmentDados()
             }
             else -> {
-                return FragmentTwo()
+                return FragmentImagens()
             }
 
         }
@@ -29,9 +29,9 @@ class MyPagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
     //titulos
     override fun getPageTitle(position: Int): CharSequence? {
         return when(position){
-            0-> "One"
+            0-> "Dados"
             else -> {
-                return "Two"
+                return "Imagens"
             }
         }
     }
