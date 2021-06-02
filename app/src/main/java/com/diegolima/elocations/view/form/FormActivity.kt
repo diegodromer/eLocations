@@ -5,8 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.diegolima.elocations.R
 import com.diegolima.elocations.view.MainActivity
-import com.diegolima.elocations.view.adapter.MyPagerAdapter
-import kotlinx.android.synthetic.main.activity_dados_form.*
+import com.diegolima.elocations.view.adapter.TabbebFormAdapter
 import kotlinx.android.synthetic.main.activity_form.*
 
 class FormActivity : AppCompatActivity() {
@@ -14,7 +13,7 @@ class FormActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_form)
 
-        toolBarForm.setTitle("eLocations")
+        toolBarForm.title = "eLocations"
         setSupportActionBar(toolBarForm)
 
         toolBarForm.navigationIcon = getDrawable(R.drawable.ic_arrow)
@@ -23,7 +22,7 @@ class FormActivity : AppCompatActivity() {
             finish()
         }
 
-        val fragmentAdapter = MyPagerAdapter(supportFragmentManager)
+        val fragmentAdapter = TabbebFormAdapter(supportFragmentManager)
         viewPager.adapter = fragmentAdapter
 
         tablayout.setupWithViewPager(viewPager)

@@ -27,7 +27,7 @@ class DadosFormActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dados_form)
 
-        toobarDadosForm.setTitle("eLocations")
+        toobarDadosForm.title = "eLocations"
         setSupportActionBar(toobarDadosForm)
 
         toobarDadosForm.navigationIcon = getDrawable(R.drawable.ic_arrow)

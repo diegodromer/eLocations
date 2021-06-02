@@ -6,7 +6,7 @@ import androidx.fragment.app.FragmentPagerAdapter
 import com.diegolima.elocations.view.form.FragmentDados
 import com.diegolima.elocations.view.form.FragmentImagens
 
-class MyPagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
+class TabbebFormAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
 
 
     override fun getItem(position: Int): Fragment {

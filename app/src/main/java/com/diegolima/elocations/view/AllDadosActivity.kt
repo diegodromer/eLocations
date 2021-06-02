@@ -13,7 +13,7 @@ class AllDadosActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_all_dados)
 
-        toolBarAllDados.setTitle("eLocations")
+        toolBarAllDados.title = "eLocations"
         setSupportActionBar(toolBarAllDados)
 
         toolBarAllDados.navigationIcon = getDrawable(R.drawable.ic_arrow)

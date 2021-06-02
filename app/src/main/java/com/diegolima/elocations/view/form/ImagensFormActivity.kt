@@ -25,7 +25,7 @@ class ImagensFormActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_imagens_form)
 
-        toobarImagensForm.setTitle("eLocations")
+        toobarImagensForm.title = "eLocations"
         setSupportActionBar(toobarImagensForm)
 
         toobarImagensForm.navigationIcon = getDrawable(drawable.ic_arrow)
